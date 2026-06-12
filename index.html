@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PSLE Ace — Ace Your PSLE</title>
+  <meta name="description" content="PSLE Ace helps Primary 6 students in Singapore prepare for the PSLE with practice questions in Maths and Science." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #00B9A8;
+      --teal-dark: #008F82;
+      --navy: #1A2B4A;
+      --yellow: #FFD54F;
+      --bg: #F5F9FF;
+      --white: #ffffff;
+      --text: #1A2B4A;
+      --muted: #6B7A99;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 0 #E5EAF3;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-logo {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--teal);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--navy); }
+    nav a.nav-link {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 24px;
+    }
+    nav a.nav-link:hover { color: var(--teal); }
+
+    /* HERO */
+    .hero {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: #E6FAF8;
+      color: var(--teal-dark);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--teal);
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+    .badge-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      opacity: 0.5;
+      cursor: default;
+    }
+    .coming-soon-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    /* SUBJECTS */
+    .subjects {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .subjects-label {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .subject-pills {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+    .pill-maths  { background: #E8F4FF; color: #1565C0; }
+    .pill-science { background: #E8FFF2; color: #1B7A3E; }
+    .pill-soon { background: #F3F4F6; color: #9CA3AF; }
+
+    /* FEATURES */
+    .features {
+      background: var(--white);
+      padding: 64px 24px;
+    }
+    .features-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.7rem;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    .feature-card h3 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: #8A9BBE;
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 0.85rem;
+    }
+    footer a { color: #8A9BBE; text-decoration: none; margin: 0 10px; }
+    footer a:hover { color: var(--teal); }
+    footer .footer-logo {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    footer .footer-links { margin: 12px 0; }
+    footer .footer-copy { margin-top: 12px; font-size: 0.8rem; opacity: 0.6; }
+
+    @media (max-width: 480px) {
+      .hero { padding: 48px 20px 40px; }
+      .store-badge { font-size: 0.88rem; padding: 10px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">PSLE <span>Ace</span></a>
+    <div>
+      <a href="/privacy.html" class="nav-link">Privacy</a>
+      <a href="/terms.html" class="nav-link">Terms</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-badge">Launching July 2026</div>
+    <h1>Ace your PSLE,<br /><em>one question at a time</em></h1>
+    <p>Practice questions for Primary 6 students in Singapore. Maths and Science MCQ — free to use, no account needed.</p>
+    <div class="badge-row">
+      <span class="store-badge">⬛ App Store</span>
+      <span class="store-badge">▶ Google Play</span>
+    </div>
+    <p class="coming-soon-note">Coming to iOS and Android — mid July 2026</p>
+  </section>
+
+  <section class="subjects">
+    <p class="subjects-label">Subjects at launch</p>
+    <div class="subject-pills">
+      <div class="pill pill-maths">📐 Mathematics</div>
+      <div class="pill pill-science">🔬 Science</div>
+      <div class="pill pill-soon">📖 English — coming soon</div>
+      <div class="pill pill-soon">🌏 Mother Tongue — coming soon</div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="features-inner">
+      <h2 class="section-title">Built for PSLE</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>No account needed</h3>
+          <p>Jump straight into practice as a guest. No sign-up required to get started.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Track your progress</h3>
+          <p>Create a free account to save your scores and track accuracy across sessions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Instant explanations</h3>
+          <p>Every question includes a worked explanation so you learn, not just guess.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🆓</div>
+          <h3>Free at launch</h3>
+          <p>Full access to all Maths and Science questions, completely free at launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">PSLE Ace</div>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="mailto:admin@psle-ace.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Karl Mumm. Auckland, New Zealand. Not affiliated with MOE or SEAB.</div>
+  </footer>
+
+</body>
+</html>
